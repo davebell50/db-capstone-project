@@ -1,0 +1,71 @@
+USE LittleLemonDB;
+
+# Populate Address table
+INSERT INTO LittleLemonDB.Address (City, State, Zipcode, CustomerID)
+VALUES
+    ('Orem', 'Utah', '84097',1),
+    ('Provo', 'Utah', '85001',2),
+    ('Lehi', 'Utah', '83674',3),
+    ('Vinyard', 'Utah', '84067',4),
+    ('Orem', 'Utah', '84097',5);
+
+# Populate Customer table
+INSERT INTO LittleLemonDB.Customer (FullName, PhoneNumber, Email)
+VALUES
+    ('Michael Jones', '1234567894', 'Mjones@email.com'),
+    ('Stuart Cooper', '5762483496', 'Bigc@blow.com'),
+    ('Kyle Marks', '9876543211', 'Marks@email.com'),
+    ('Rachael Hyde', '1478523691', 'Hyde@mail.com'),
+    ('Julie Lowe', '3692581477', 'JLowe@mail.com');
+
+# Populate Staff table
+INSERT INTO LittleLemonDB.Staff (FullName, ContactNumber, Email, Role, Salary)
+VALUES
+    ('Jason Jackson', '5254598671', 'jjackson@littlelemon.com', 'Manager', 1000.00),
+    ('Will Marks', '8587896237', 'wmarks@littlelemon.com', 'Chef', 800.00),
+    ('Sally Holt','6548952226', 'sholt@littlelemon.com', 'Waiter', 350.00),
+    ('Jenny Brimhall','2123659844', 'JBrimhall@littlelemon.com', 'Waiter', 350.00),
+    ('Samantha Burns', '8057441312', 'sburns@littlelemon.com', 'Waiter', 350.00),
+    ('Mike Duboise', '2585876995', 'mduboise@littlelemon.com', 'Bartender', 400.00),
+    ('Debbie Renolds', '4548962586', 'drenolds@littlelemon.com', 'Hostess', 300.00);
+
+# Populate Bookings table
+INSERT INTO LittleLemonDB.Bookings (BookingDate, TableNumber, CustomersID)
+VALUES
+    ('2024-07-01', 3, 5),
+    ('2024-07-05', 2, 1),
+    ('2024-07-07', 1, 3),
+    ('2024-07-07', 4, 2),
+    ('2024-07-09', 5, 4);
+
+# Populate Orders table
+INSERT INTO LittleLemonDB.Orders (Date, Quantity, TotalCost, BookingID, Customers_ID, MenuID, DeliveryID)
+VALUES	
+    ('2024-07-01', 3, 55.00, 1, 5, 1, 1),
+    ('2024-07-05', 2, 40.00, 2, 1, 2, 2 ),
+    ('2024-07-07', 4, 100.00, 3, 3, 4, 3 ),
+    ('2024-07-07', 2, 65.00,  4, 2, 1, 4),
+    ('2024-07-09', 6, 210.00, 5, 4, 2, 5);
+
+# Populate Deliverytable
+INSERT INTO LittleLemonDB.Delivery (DeliveryDate, DeliveryStatus, StaffID)
+VALUES
+    ('2024-07-01', 'Delivered',3),
+    ('2024-07-05', 'Delivered',3),
+    ('2024-07-07', 'Delivered',5),
+    ('2024-07-07', 'Delivered',4),
+    ('2024-07-09', 'Delivered',5);
+
+# Populate Menu table
+INSERT INTO LittleLemonDB.Menu ( FoodName, Price, Catagory, Cuisine)
+VALUES
+    ('Cowboy Steak', 20.75, 'Main Course', 'Americian'),
+    ('Orange Chicken', 15.99, 'Main Course', 'Asian'),
+    ('Fried Pickles', 7.85,  'Starter', 'Americian'),
+    ('Combo Plate', 15.25, 'Starter', 'Asian'),
+    ('Tiramisu', 6.99, 'Dessert', 'Americian'),
+    ('Beer', 5.00, 'Drink', 'Americian');
+
+
+
+DESC Staff;
